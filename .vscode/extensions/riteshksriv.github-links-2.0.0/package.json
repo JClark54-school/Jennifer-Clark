@@ -1,0 +1,72 @@
+{
+	"name": "github-links",
+	"displayName": "Github Links",
+	"description": "This extension opens up the github links in your browser",
+	"version": "2.0.0",
+	"publisher": "riteshksriv",
+	"engines": {
+		"vscode": "^1.37.0"
+	},
+	"repository": {
+		"url": "https://github.com/riteshksriv/github-links"
+	},
+	"categories": [
+		"SCM Providers"
+	],
+	"activationEvents": [
+		"onCommand:extension.github_history",
+		"onCommand:extension.github_page",
+		"onCommand:extension.github_blame"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.github_history",
+				"title": "Open File GitHub History"
+			},
+			{
+				"command": "extension.github_page",
+				"title": "Open File GitHub Page"
+			},
+			{
+				"command": "extension.github_blame",
+				"title": "Open File GitHub Blame url"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/git-branch": "^2.0.1",
+		"@types/glob": "^7.1.1",
+		"@types/lodash": "^4.14.137",
+		"@types/mocha": "^5.2.6",
+		"@types/node": "^10.12.21",
+		"@types/voca": "^1.4.0",
+		"@types/vscode": "^1.37.0",
+		"glob": "^7.1.4",
+		"mocha": "^6.1.4",
+		"tslint": "^5.12.1",
+		"typescript": "^3.3.1",
+		"vscode-test": "^1.0.2"
+	},
+	"dependencies": {
+		"git-branch": "^2.0.1",
+		"git-remote-origin-url": "^3.0.0",
+		"lodash": "^4.17.15",
+		"simple-git": "^1.124.0",
+		"voca": "^1.4.0"
+	},
+	"__metadata": {
+		"id": "ecf0f51c-79f2-4fbe-a902-8727994eea4e",
+		"publisherId": "a7c2735c-4d41-4934-bb9d-1a0637ec12d5",
+		"publisherDisplayName": "Ritesh Kumar",
+		"installedTimestamp": 1623245343449
+	}
+}

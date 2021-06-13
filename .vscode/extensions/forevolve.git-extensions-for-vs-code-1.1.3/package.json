@@ -1,0 +1,80 @@
+{
+	"name": "git-extensions-for-vs-code",
+	"displayName": "Git Extensions for VS Code",
+	"description": "Provide a command to browse the current project using GitExtensions, from the Explorer.",
+	"version": "1.1.3",
+	"icon": "images/Logo-256x256.png",
+	"publisher": "forevolve",
+	"author": {
+		"name": "Carl-Hugo Marcotte"
+	},
+	"engines": {
+		"vscode": "^1.29.0"
+	},
+	"categories": [
+		"Other",
+		"SCM Providers"
+	],
+	"keywords": [
+		"Git",
+		"GitExt",
+		"GitExtensions",
+		"Git Extensions",
+		"Extensions"
+	],
+	"activationEvents": [
+		"onView:fileExplorer",
+		"onCommand:extension.forevolve.gitext.browse"
+	],
+	"main": "./out/extension",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.forevolve.gitext.browse",
+				"title": "Browse with Git Extensions"
+			}
+		],
+		"menus": {
+			"explorer/context": [
+				{
+					"command": "extension.forevolve.gitext.browse",
+					"group": "0_extension.forevolve.gitext"
+				}
+			],
+			"editor/context": [
+				{
+					"command": "extension.forevolve.gitext.browse",
+					"group": "extension.forevolve.gitext"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "npm run compile && node ./node_modules/vscode/bin/test"
+	},
+	"devDependencies": {
+		"@types/mocha": "^2.2.42",
+		"@types/node": "^8.10.61",
+		"tslint": "^5.20.1",
+		"typescript": "^2.6.1",
+		"vscode": "^1.1.37"
+	},
+	"bugs": {
+		"url": "https://github.com/ForEvolve/git-extensions-for-vs-code/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ForEvolve/git-extensions-for-vs-code.git"
+	},
+	"homepage": "https://github.com/ForEvolve/git-extensions-for-vs-code/blob/master/README.md",
+	"__metadata": {
+		"id": "af9c80b7-e9ee-4810-ada9-19ea0273474e",
+		"publisherId": "bf2a5da0-0906-4e9b-af0a-cc6bd5709df6",
+		"publisherDisplayName": "ForEvolve",
+		"installedTimestamp": 1623245303034
+	}
+}

@@ -1,0 +1,101 @@
+{
+	"name": "gitignore",
+	"displayName": "gitignore",
+	"description": "Lets you pull .gitignore templates from the https://github.com/github/gitignore repository. Language support for .gitignore files.",
+	"version": "0.7.0",
+	"author": "Marc-André Bühler",
+	"publisher": "codezombiech",
+	"icon": "icon.png",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/CodeZombieCH/vscode-gitignore"
+	},
+	"bugs": {
+		"url": "https://github.com/CodeZombieCH/vscode-gitignore/issues"
+	},
+	"homepage": "https://github.com/CodeZombieCH/vscode-gitignore/issues",
+	"license": "MIT",
+	"engines": {
+		"vscode": "^1.18.0"
+	},
+	"categories": [
+		"Programming Languages",
+		"Other"
+	],
+	"keywords": [
+		"multi-root ready"
+	],
+	"activationEvents": [
+		"onCommand:addgitignore"
+	],
+	"main": "./out/extension",
+	"contributes": {
+		"commands": [
+			{
+				"command": "addgitignore",
+				"title": "Add gitignore"
+			}
+		],
+		"configuration": {
+			"type": "object",
+			"title": "gitignore extension configuration",
+			"properties": {
+				"gitignore.cacheExpirationInterval": {
+					"type": "integer",
+					"default": 3600,
+					"description": "Number of seconds the list of `.gitignore` files retrieved from github will be cached"
+				}
+			}
+		},
+		"languages": [
+			{
+				"id": "gitignore",
+				"aliases": [
+					"Gitignore"
+				],
+				"filenames": [
+					".gitignore"
+				],
+				"configuration": "./gitignore.configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "gitignore",
+				"scopeName": "text.gitignore",
+				"path": "./syntaxes/gitignore.json"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"lint": "eslint src --ext ts",
+		"pretest": "npm run compile && npm run lint",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/glob": "^7.1.3",
+		"@types/mocha": "^8.2.2",
+		"@types/node": "^14.0.0",
+		"@types/vscode": "1.18.0",
+		"@typescript-eslint/eslint-plugin": "^4.23.0",
+		"@typescript-eslint/parser": "^4.23.0",
+		"eslint": "^7.26.0",
+		"glob": "^7.1.7",
+		"mocha": "^8.4.0",
+		"typescript": "^4.2.4",
+		"vsce": "^1.88.0",
+		"vscode-test": "^1.5.2"
+	},
+	"dependencies": {
+		"github": "^13.1.1"
+	},
+	"__metadata": {
+		"id": "3e891cf9-53cb-49a3-8d01-8f0b1f0afb29",
+		"publisherId": "930310c4-ca8b-4e80-9d19-2b1507b2af61",
+		"publisherDisplayName": "CodeZombie",
+		"installedTimestamp": 1623245535121
+	}
+}
